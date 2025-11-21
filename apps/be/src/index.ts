@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
+import verifySignatureRouter from './routes/verifySignature';
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// API Routes
+app.use('/', verifySignatureRouter);
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: express.NextFunction) => {
