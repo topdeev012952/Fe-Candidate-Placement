@@ -1,0 +1,25 @@
+{
+  "name": "legacy-fe-candidate-assignment",
+  "version": "1.0.0",
+  "description": "React + Dynamic.xyz Headless Implementation (Frontend) | Node.js + Express (Backend)",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"fe,be\" -c \"cyan,magenta\" \"npm run dev --workspace fe\" \"npm run dev --workspace be\"",
+    "build": "concurrently -n \"fe,be\" -c \"cyan,magenta\" \"npm run build --workspace fe\" \"npm run build --workspace be\"",
+    "start": "concurrently -n \"fe,be\" -c \"cyan,magenta\" \"npm run start --workspace fe\" \"npm run start --workspace be\"",
+    "test": "concurrently -n \"fe,be\" -c \"cyan,magenta\" \"npm run test --workspace fe\" \"npm run test --workspace be\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@techpond:techpond31/legacy-fe-candidate-assignment"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
