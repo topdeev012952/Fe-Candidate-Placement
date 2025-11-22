@@ -3,7 +3,6 @@ import { Login } from './components/Login';
 import { WalletDisplay } from './components/WalletDisplay';
 import { MessageForm } from './components/MessageForm';
 import { SignatureHistory } from './components/SignatureHistory';
-import { MFASetup } from './components/MFASetup';
 
 function App() {
   const { user } = useDynamicContext();

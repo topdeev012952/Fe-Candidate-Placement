@@ -22,12 +22,13 @@ export const verifySignature = async (
     );
     return response.data;
   } catch (error) {
-    throw new Error(
-      error instanceof AxiosError ?
-        error.response?.data?.message :
-        error instanceof Error ?
-          error.message :
-          'An unexpected error occurred'
-    );
+    if (error instanceof AxiosError) {
+      const errorMessage = error.response?.data?.message || error.message || 'An unexpected error occurred';
+      throw new Error(errorMessage);
+    }
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
+    throw new Error('An unexpected error occurred');
   }
 };
