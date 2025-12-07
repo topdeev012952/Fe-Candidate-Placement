@@ -1,4 +1,5 @@
 export type MessageHistoryItem = {
+  
   id: string;
   message: string;
   signature: string;
