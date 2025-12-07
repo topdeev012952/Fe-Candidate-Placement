@@ -10,7 +10,9 @@ export const useWallet = () => {
   const isConnected = !!primaryWallet && !!user;
 
   const signMessage = async (message: string): Promise<string> => {
+    
     if (!primaryWallet) {
+      
       throw new Error('Wallet not connected');
     }
 
