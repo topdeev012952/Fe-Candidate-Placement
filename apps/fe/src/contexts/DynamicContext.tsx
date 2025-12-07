@@ -10,10 +10,12 @@ interface DynamicContextProps {
 export const DynamicContext = ({ children }: DynamicContextProps) => {
   return (
     <DynamicContextProvider
+
       settings={{
         environmentId: ENV.dynamicEnvironmentId,
         walletConnectors: [EthereumWalletConnectors],
       }}
+      
     >
       {children}
     </DynamicContextProvider>
