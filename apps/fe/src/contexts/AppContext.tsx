@@ -2,7 +2,9 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import type { MessageHistoryItem } from "../types/message";
 
 interface AppContextType {
+
   history: MessageHistoryItem[];
+  
   addToHistory: (item: Omit<MessageHistoryItem, 'id' | 'timestamp'>) => MessageHistoryItem;
   updateVerificationResult: (id: string, result: MessageHistoryItem['verificationResult']) => void;
   clearHistory: () => void;
@@ -10,7 +12,9 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType>({
   history: [],
+
   addToHistory: () => {
+
     throw new Error('addToHistory is not implemented');
   },
   updateVerificationResult: () => { },
